@@ -1,15 +1,23 @@
 package StallStuff;
 
-public abstract class Stall {
+import Interfaces.IChargeable;
+import Interfaces.IEnjoyable;
+import ThemePark.Visitor;
+
+public abstract class Stall implements IChargeable, IEnjoyable {
 
     String name;
     String ownerName;
     int parkingSpot;
+    double price;
+    int funRating;
 
-    public Stall(String name, String ownerName, int parkingSpot){
+    public Stall(String name, String ownerName, int parkingSpot, double price, int funRating){
         this.name = name;
         this.ownerName = ownerName;
         this.parkingSpot = parkingSpot;
+        this.price = price;
+        this.funRating = funRating;
     }
 
     public String getName(){
@@ -24,4 +32,11 @@ public abstract class Stall {
         return parkingSpot;
     }
 
+    public double priceFor(Visitor visitor){
+        return price;
+    }
+
+    public int getFunRating(){
+        return funRating;
+    }
 }

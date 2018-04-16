@@ -1,14 +1,22 @@
 package ThemePark;
 
-public class Visitor {
+public class Visitor{
 
     int age;
-    double height;
+    int height;
     double money;
 
-    public Visitor (int age, double height, double money){
+    public Visitor (int age, int height, double money){
         this.age = age;
         this.height = height;
         this.money = money;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getHeight() {
+        return height;
     }
 }
